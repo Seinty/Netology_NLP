@@ -1,4 +1,6 @@
 /files
-/venv
 /.idea
+/.ipynb_checkpoints
 /IMDB Dataset.csv
+/venv
+/web_app

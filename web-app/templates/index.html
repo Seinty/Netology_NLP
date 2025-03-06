@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/киберпанк.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        input[type="file"] {
+            margin: 20px 0;
+        }
+        .button {
+            background-color: #FF5733;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        a.button {
+            background-color: #28a745;
+            margin-top: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sentiment Analysis</h1>
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".csv">
+            <br>
+            <input type="submit" value="Upload and Analyze" class="button">
+        </form>
+        {% if result %}
+            <div class="result">{{ result }}</div>
+            {% if download_link %}
+                <a href="{{ download_link }}" class="button">Download Result File</a>
+            {% endif %}
+            <a href="{{ url_for('statistics_page') }}" class="button">View Statistics</a>
+        {% endif %}
+    </div>
+</body>
+</html>

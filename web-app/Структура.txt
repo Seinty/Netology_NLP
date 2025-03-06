@@ -1,0 +1,17 @@
+flask_project/
+├── app.py
+├── statistics.py
+├── sentimentation.py
+├── clean_text.py
+├── model.keras
+├── tfidf_vectorizer.pkl
+├── uploads/
+│   └── (uploaded CSV files will be saved here)
+├── processed/
+│   └── (processed CSV files will be saved here)
+└── static/
+    └── images/
+        └── киберпанк.jpg
+└── templates/
+    └── index.html
+    └── statistics.html

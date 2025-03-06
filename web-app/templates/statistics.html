@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/Nait_sity.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        h1, h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 80%;
+            border: 2px solid white;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            width: 200px;
+        }
+        a:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <h1>Statistics</h1>
+    <h2>Sentiment Distribution</h2>
+    <img src="{{ url_for('static', filename='histogram.png') }}" alt="Histogram">
+
+    <h2>Word Cloud - Positive Reviews</h2>
+    <img src="{{ url_for('static', filename='pos_wordcloud.png') }}" alt="Positive Word Cloud">
+
+    <h2>Word Cloud - Negative Reviews</h2>
+    <img src="{{ url_for('static', filename='neg_wordcloud.png') }}" alt="Negative Word Cloud">
+
+
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
